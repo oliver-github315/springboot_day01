@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>hello</title>
+    <link rel="stylesheet" th:href="@{/css/test.css}">
+    <script th:src="@{/js/jquery-3.5.0.min.js}"></script>
+    <script>
+        $(function () {
+            alert('aaa')
+        })
+    </script>
 </head>
 <body>
     <h1>hello you !!</h1>
@@ -18,5 +25,25 @@
         <li>name：<span th:text="${user.name}"/></li>
         <li>date：<span th:text="${#dates.format(user.date,'yyyy-MM-dd HH:mm:ss')}"/></li>
     </ul>
+
+    <br><br>
+    有条件展示数据：
+    <hr>
+    <span th:if="${user.id} le 12" th:text="${user.name}"/>
+
+    <br><br>
+    展示集合数据：
+    <hr>
+    <ul th:each="teacher,teacherStatus:${teachers}">
+        <li>遍历的次数：<span th:text="${teacherStatus.count}"/>,遍历的索引：<span th:text="${teacherStatus.index}"/>
+            ,遍历是否是奇数行：<span th:text="${teacherStatus.odd}"/>,遍历是否是偶数行：<span th:text="${teacherStatus.even}"/></li>
+        <li th:text="${teacher.id}"/>
+        <li th:text="${teacher.name}"/>
+        <li th:text="${#dates.format(teacher.date,'yyyy-MM-dd HH:mm:ss')}"/>
+    </ul>
+
+    <br><br>
+    删除链接：
+    <a th:href="@{/hello/del(id=21,name='王武')}">删除</a>
 </body>
 </html>

@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @RequestMapping("/hello")
@@ -71,6 +68,15 @@ public class HelloController {
         model.addAttribute("name", "小王");
         model.addAttribute("uame", "<a href=''>小赵</a>");
         model.addAttribute("user", new Teacher(11,"美女",new Date()));
+        List<Teacher> teachers = Arrays.asList(new Teacher(11,"美女",new Date()),
+                                                new Teacher(12,"帅哥",new Date()));
+        model.addAttribute("teachers", teachers);
         return "index";
+    }
+    @RequestMapping("del")
+    @ResponseBody
+    public String del(Integer id,String name){
+        System.out.println(id+"---"+name);
+        return id+"---"+name;
     }
 }
