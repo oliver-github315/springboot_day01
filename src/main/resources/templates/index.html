@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <h1>hello you !!</h1>
+    获取单个数据：
+    <hr>
+    欢迎你：<span th:text="${name}"/>  uname:<span th:utext="${uame}"/> <br>
+    <input type="text" th:value="${name}">
+    <br><br>
+    获取对象数据：
+    <hr>
+    <ul>
+        <li>id：<span th:text="${user.id}"/></li>
+        <li>name：<span th:text="${user.name}"/></li>
+        <li>date：<span th:text="${#dates.format(user.date,'yyyy-MM-dd HH:mm:ss')}"/></li>
+    </ul>
+</body>
+</html>

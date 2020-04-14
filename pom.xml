@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cx</groupId>
+  <artifactId>springboot_day01</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.6.RELEASE</version>
+  </parent>
+
+  <!--<name>springboot_day01 Maven Webapp</name>-->
+  <!--<url>http://www.example.com</url>-->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <!--引入web支持包-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!--引入解析jsp页面的依赖 用springboot插件启动或者指定工作目录  不用jsp时不用-->
+    <!--<dependency>-->
+      <!--<groupId>org.apache.tomcat.embed</groupId>-->
+      <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+    <!--</dependency>-->
+    <!--jstl标准标签库-->
+    <!--<dependency>-->
+      <!--<groupId>jstl</groupId>-->
+      <!--<artifactId>jstl</artifactId>-->
+      <!--<version>1.2</version>-->
+    <!--</dependency>-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <!--插件乱码-->
+        <!--<configuration>-->
+          <!--<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>-->
+        <!--</configuration>-->
+      </plugin>
+    </plugins>
+  </build>
+</project>
